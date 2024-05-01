@@ -1,0 +1,40 @@
+.bgcolor {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 2%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.ant-form-item-label {
+    margin-top: 6px;
+    margin-bottom: 8px;
+    font-weight: bold; 
+}
+
+
+.ant-input,
+.ant-select-selector,
+.ant-picker {
+    margin-top: 6px;
+    border-radius: 4px;
+}
+
+.ant-form-item {
+    margin-bottom: 16px; 
+}
+
+
+.label-center {
+        text-align: center;
+ }
+    
+    .label-center .ant-form-item-label label {
+        font-size: 16px; /* Change the font size as needed */
+        font-family:Georgia, 'Times New Roman', Times, serif; /* Change the font family as needed */
+        font-weight:300; /* Remove bold style */
+    }
+  
