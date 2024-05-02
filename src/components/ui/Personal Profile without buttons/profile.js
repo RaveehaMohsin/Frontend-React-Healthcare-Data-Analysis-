@@ -22,7 +22,7 @@ export default function PersonalRecordForm(props) {
     const [form] = Form.useForm(); // Create a form instance
 
     return (
-      <div style={{ marginTop : '20px',paddingTop: '20px', paddingBottom: '20px', paddingLeft: '20px', paddingRight: '20px', backgroundColor: 'white', borderRadius: '10px' }}>
+      <div>
       <Form className='bgcolor' form={form} name="validateOnly" layout="vertical" autoComplete="off">
       <h1 className="text-lg font-semibold mb-2">Personal Info</h1>
         <Form.Item
@@ -132,27 +132,6 @@ export default function PersonalRecordForm(props) {
           >
             <Input />
           </Form.Item>
-
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '20px' }}>
-          <Button
-            onClick={handleAddDetails}
-            style={{ width: '50%', height: '48px', color: 'white', backgroundColor: 'rgba(137, 190, 197, 1)' }}
-            icon={<FontAwesomeIcon icon={faPlus} />}
-          >
-            Add Details
-          </Button>
-          <Space width="10px" />
-          <div style={{ width: '50%' }}>
-          <Link to={props.linkpage} >
-              <Button
-                style={{ width: '100%', height: '48px', color: 'white', backgroundColor: 'rgba(137, 190, 197, 1)' }}
-                icon={<FontAwesomeIcon icon={faEye} />}
-              >
-                View Profile
-              </Button>
-            </Link>
-          </div>
-        </div>
       </Form>
       </div>
     );

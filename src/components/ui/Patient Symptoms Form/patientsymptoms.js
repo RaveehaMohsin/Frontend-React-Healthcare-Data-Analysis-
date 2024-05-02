@@ -1,17 +1,10 @@
 import React, { useState } from 'react';
-import '../Form Register/registerform.css'
 import { Form, Input, Select, Radio, DatePicker, Row, Col } from 'antd';
 
 const { Option } = Select;
 const formItemLayout = {
-  labelCol: {
-    xs: { span: 24 },
-    sm: { span: 8 },
-  },
-  wrapperCol: {
-    xs: { span: 24 },
-    sm: { span: 16 }, // Increase the span for the wrapper column to fit two items inline
-  },
+  labelCol: { span: 8 },
+  wrapperCol: { span: 16 },
 };
 
 const PatientSymptoms = () => {
@@ -22,87 +15,81 @@ const PatientSymptoms = () => {
   };
 
   return (
-    <Form {...formItemLayout} className='bgcolor' >    
-      <Form.Item label="Want to add new symptoms?" name="addSymptoms" style={{ textAlign: 'center' }}>
-    <Radio.Group onChange={handleAddSymptomsChange} value={addNewSymptoms} style={{ display: 'inline-block' }}>
-      <Radio value="yes">Yes</Radio>
-      <Radio value="no">No</Radio>
-    </Radio.Group>
-  </Form.Item>
+    <div style={{ margin: '20px auto', padding: '20px', maxWidth: '1000px', background: 'white', borderRadius: '10px', fontFamily: 'Poppins, sans-serif' }}>
+      <style>
+        {`
+          body {
+            font-family: 'Poppins', sans-serif;
+          }
 
-      {addNewSymptoms === 'yes' && (
-        <>
-        <div style={{ textAlign: 'center' }}>
-          <Form.Item
-            label="Enter Symptom Name"
-            name="symptomname"
-            style={{ display: 'inline-block', width: 'calc(50% - 8px)', marginBottom: 16 }}
-            rules={[{ required: true, message: 'Please enter the symptom name!' }]}
-          >
-            <Input placeholder="Enter new symptoms name" />
+          .form-container {
+            margin-top: 20px;
+          }
+
+          .form-header {
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+          }
+
+          .form-item {
+            margin-bottom: 16px;
+          }
+
+          .centered {
+            text-align: center;
+          }
+
+          .bold-label {
+            font-weight: bold;
+          }
+        `}
+      </style>
+
+      <div className="form-container">
+        <div className="form-header">Patient Symptoms Form</div>
+        <Form {...formItemLayout}>
+          <Form.Item label="Want to add new symptoms?" name="addSymptoms" className="form-item bold-label">
+            <Radio.Group onChange={handleAddSymptomsChange} value={addNewSymptoms}>
+              <Radio value="yes">Yes</Radio>
+              <Radio value="no">No</Radio>
+            </Radio.Group>
           </Form.Item>
-        </div>
 
-        <Row gutter={16} justify="space-between">
-          <Col span={11}>
-            <Form.Item label="Date Recorded" name="daterecorded" style={{ marginBottom: 16 }} rules={[{ required: true, message: 'Please select the date!' }]}>
-              <DatePicker style={{ width: '100%' }} />
-            </Form.Item>
-          </Col>
-          <Col span={12}>
-            <Form.Item
-              label="Description"
-              name="description"
-              style={{ marginBottom: 16, marginLeft: '10px' }}
-              rules={[{ required: true, message: 'Please enter the description!' }]} 
-            >
-              <Input.TextArea placeholder="Enter description" />
-            </Form.Item>
-          </Col>
-        </Row>
+          {addNewSymptoms === 'yes' && (
+            <div className="centered">
+              <Form.Item label="Enter Symptom Name" name="symptomname" className="form-item">
+                <Input placeholder="Enter new symptom name" />
+              </Form.Item>
+              <Form.Item label="Date Recorded" name="daterecorded" className="form-item">
+                <DatePicker style={{ width: '100%' }} />
+              </Form.Item>
+              <Form.Item label="Description" name="description" className="form-item">
+                <Input.TextArea rows={4} placeholder="Enter description" />
+              </Form.Item>
+            </div>
+          )}
 
-
-        </>
-      )}
-
-      {addNewSymptoms === 'no' && (
-        <>
-          <div style={{ textAlign: 'center' }}>
-      <Form.Item
-        label="Select Existing Symptoms"
-        name="existingSymptoms"
-        style={{ display: 'inline-block', width: 'calc(50% - 8px)', marginBottom: 16 }}
-        labelCol={{ span: 9 }} 
-        wrapperCol={{ span: 20 }} 
-        rules={[{ required: true, message: 'Please select existing symptoms!' }]}
-      >
-        <Select placeholder="Select symptoms name" style={{ width: '100%' }}>
-          <Option value="symptom1">Symptom 1</Option>
-          <Option value="symptom2">Symptom 2</Option>
-          <Option value="symptom3">Symptom 3</Option>
-        </Select>
-      </Form.Item>
+          {addNewSymptoms === 'no' && (
+            <div className="centered">
+              <Form.Item label="Select Existing Symptoms" name="existingSymptoms" className="form-item">
+                <Select placeholder="Select symptoms name">
+                  <Option value="symptom1">Symptom 1</Option>
+                  <Option value="symptom2">Symptom 2</Option>
+                  <Option value="symptom3">Symptom 3</Option>
+                </Select>
+              </Form.Item>
+              <Form.Item label="Date Recorded" name="daterecorded" className="form-item">
+                <DatePicker style={{ width: '100%' }} />
+              </Form.Item>
+              <Form.Item label="Description" name="description" className="form-item">
+                <Input.TextArea rows={4} placeholder="Enter description" />
+              </Form.Item>
+            </div>
+          )}
+        </Form>
+      </div>
     </div>
-       <Row gutter={16} justify="space-between">
-          <Col span={11}>
-            <Form.Item label="Date Recorded" name="daterecorded" style={{ marginBottom: 16 }} rules={[{ required: true, message: 'Please select the date!' }]}>
-              <DatePicker style={{ width: '100%' }} />
-            </Form.Item>
-          </Col>
-          <Col span={12}>
-            <Form.Item
-              label="Description"
-              name="description"
-              style={{ marginBottom: 16, marginLeft: '10px' }} 
-              rules={[{ required: true, message: 'Please enter the description!' }]} 
-            >
-              <Input.TextArea placeholder="Enter description" />
-            </Form.Item>
-          </Col>
-        </Row>
-        </>
-      )}
-    </Form>
   );
 };
 

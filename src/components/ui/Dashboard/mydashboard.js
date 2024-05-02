@@ -1,18 +1,18 @@
 // MyDashboard.js
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWheelchair, faStethoscope, faFileInvoiceDollar, faHospitalUser, faPrescriptionBottleMedical, faReceipt } from '@fortawesome/free-solid-svg-icons';
+import { faWheelchair, faStethoscope, faSignOutAlt, faHospitalUser, faPrescriptionBottleMedical, faFaceDizzy } from '@fortawesome/free-solid-svg-icons';
 import Dashboard from '../Dashboard/dashboard';
 import './dashboard.css';
 
 const MyDashboard = () => {
   const itemsData = {
-    1: { title: 'Dashboard', link: "/patientDashboard", icon: <FontAwesomeIcon icon={faHospitalUser} /> },
+    1: { title: 'Dashboard', link: "/dashboard", icon: <FontAwesomeIcon icon={faHospitalUser} /> },
     2: { title: 'Register', link: "/patientRegister", icon: <FontAwesomeIcon icon={faWheelchair} /> },
-    3: { title: 'Treatment', link: "/patientTreatment", icon: <FontAwesomeIcon icon={faStethoscope} /> },
-    4: { title: 'Prescription', link: "/patientPrescription", icon: <FontAwesomeIcon icon={faPrescriptionBottleMedical} /> },
-    5: { title: 'Invoices', link: "/patientInvoices", icon: <FontAwesomeIcon icon={faFileInvoiceDollar} /> },
-    6: { title: 'Payments', link: "/patientPayments", icon: <FontAwesomeIcon icon={faReceipt} /> },
+    3: { title: 'Symptoms', link: "/patientSymptoms", icon: <FontAwesomeIcon icon={faFaceDizzy} /> },
+    4: { title: 'Treatment', link: "/patientTreatment", icon: <FontAwesomeIcon icon={faStethoscope} /> },
+    5: { title: 'Medical Records', link: "/patientMedicalRecord", icon: <FontAwesomeIcon icon={faPrescriptionBottleMedical} /> },
+    6: { title: 'Logout', link: "/patientLogout", icon: <FontAwesomeIcon icon={faSignOutAlt} /> },
   };
 
   return <Dashboard itemsData={itemsData} />;

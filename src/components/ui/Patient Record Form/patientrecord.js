@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button, Form, Input, Cascader, Space, TreeSelect, Select } from 'antd';
-import '../Form Register/registerform.css';
 
 const { Option } = Select;
 
@@ -44,6 +43,7 @@ const PatientRecord = () => {
 
   return (
     <>
+    <div style={{ marginTop : '20px',paddingTop: '20px', paddingBottom: '20px', paddingLeft: '20px', paddingRight: '20px', backgroundColor: 'white', borderRadius: '10px' }}>
       <Form className='bgcolor' form={form} name="validateOnly" layout="vertical" autoComplete="off">
       <h1 className="text-lg font-semibold mb-2">Health Details</h1>
         <Form.Item label="Weight" name="weight" rules={[
@@ -158,6 +158,7 @@ const PatientRecord = () => {
           font-family: 'Poppins', sans-serif;
         }
       `}</style>
+      </div>
     </>
   );
 };

@@ -22,7 +22,7 @@ export default function PersonalRecordForm(props) {
     const [form] = Form.useForm(); // Create a form instance
 
     return (
-      <div>
+      <div style={{ marginTop : '20px',paddingTop: '20px', paddingBottom: '20px', paddingLeft: '20px', paddingRight: '20px', backgroundColor: 'white', borderRadius: '10px' }}>
       <Form className='bgcolor' form={form} name="validateOnly" layout="vertical" autoComplete="off">
       <h1 className="text-lg font-semibold mb-2">Qualification Info</h1>
         <Form.Item

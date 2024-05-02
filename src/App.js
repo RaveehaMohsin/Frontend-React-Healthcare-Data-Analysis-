@@ -28,6 +28,8 @@ import HospitalAdminUserView from './pages/Hospital Admin Unassigned Staff Assig
 import HospitalDoctorsView from './pages/Hospital Admin doctor page/doctorsview'
 import HospitalAdminpatientview from './pages/HospitalAdminPatientsView/patientsviewhospitaladmin'
 import HospitalAdminParticularPatient from './pages/HospitalAdminPatientsView/particularpatientview'
+import PatientSymptoms from './pages/Patient Symptoms/symptoms'
+import PatientMedicalRecord from './pages/Patient Medical Record/patientmedicalrecordview'
 
 function App() {
   return (
@@ -36,9 +38,9 @@ function App() {
         <Navbar title="HealthCare Centre" />
         <div className="content-container">
           <div className="dashboard-container">   
-          {/*<MyDashboard />  */}              {/* This is the dashboard for Patient*/}
+          <MyDashboard />               {/* This is the dashboard for Patient*/}
           {/* { <MyDashboard_mainAdmin />  }      This is the dashboard for MainAdmin */}
-           <HospitalAdminDashboard />          {/*   This is the dashboard for HospitalAdmin */}
+         {/* <HospitalAdminDashboard />             This is the dashboard for HospitalAdmin */}
           </div>
           <main className="main-content">
             <Routes>
@@ -64,6 +66,8 @@ function App() {
               <Route path="/hospitaladminassigneddoctor" element={<HospitalDoctorsView />} />
               <Route path="/hospitaladminpatientview" element={<HospitalAdminpatientview />} />
               <Route path="/hospitaladminparticularpatientview" element={<HospitalAdminParticularPatient />} />
+              <Route path="/patientSymptoms" element={<PatientSymptoms />} />
+              <Route path="/patientMedicalRecord" element={<PatientMedicalRecord />} />
             </Routes>
           </main>
         </div>

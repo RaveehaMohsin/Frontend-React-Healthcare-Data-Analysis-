@@ -21,7 +21,7 @@ export default function HospitalAdminOfficeForm(props) {
     const [form] = Form.useForm(); // Create a form instance
 
     return (
-      <div style={{width: '800px'}}>
+        <div style={{ marginTop : '20px',paddingTop: '20px', paddingBottom: '20px', paddingLeft: '20px', paddingRight: '20px', backgroundColor: 'white', borderRadius: '10px' , width : '800px' }}>
       <Form className='bgcolor' form={form} name="validateOnly" layout="vertical" autoComplete="off">
       <h1 className="text-lg font-semibold mb-2">Workplace Information</h1>
 
